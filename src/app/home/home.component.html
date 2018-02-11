@@ -1,0 +1,21 @@
+<div class="members-view">
+  <div>
+    <div *ngFor="let member of members" (click)="getPersonDetails(member.persnr)">
+      <p>  {{member.name}}</p>
+    </div>
+  </div>
+  <div *ngIf="person">
+    <p> abteilung name : {{person.abtName}} </p>
+    <p> abteilung number : {{person.abtnr}} </p>
+    <p> abteilung bonus : {{person.bonus}} </p>
+    <p> eintritsdatum : {{person.eintrittsdatum | date:'short'}} </p>
+    <p> person name : {{person.name}} </p>
+    <p> person number : {{person.persnr}} </p>
+    <p> person salaer: {{person.salaer}} </p>
+    <p> wohnort : {{person.wohnort}} </p>
+  </div>
+  <div *ngIf="projects && projects.length">
+        <p *ngFor="let project of projects"> project name : {{project.bezeichnung}} </p>
+      </div>
+</div>
+
